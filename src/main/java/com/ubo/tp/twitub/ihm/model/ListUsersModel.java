@@ -1,9 +1,9 @@
-package main.java.com.ubo.tp.twitub.ihm.model;
+package com.ubo.tp.twitub.ihm.model;
 
-import main.java.com.ubo.tp.twitub.datamodel.IDatabaseObserver;
-import main.java.com.ubo.tp.twitub.datamodel.Twit;
-import main.java.com.ubo.tp.twitub.datamodel.User;
-import main.java.com.ubo.tp.twitub.observer.IUserModelObserver;
+import com.ubo.tp.twitub.datamodel.IDatabaseObserver;
+import com.ubo.tp.twitub.datamodel.Twit;
+import com.ubo.tp.twitub.datamodel.User;
+import com.ubo.tp.twitub.observer.IUserModelObserver;
 
 import java.util.ArrayList;
 import java.util.HashSet;

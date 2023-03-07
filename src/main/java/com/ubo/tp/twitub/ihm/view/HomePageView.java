@@ -1,10 +1,10 @@
-package main.java.com.ubo.tp.twitub.ihm.view;
+package com.ubo.tp.twitub.ihm.view;
 
-import main.java.com.ubo.tp.twitub.datamodel.Twit;
-import main.java.com.ubo.tp.twitub.ihm.controller.HomePageController;
-import main.java.com.ubo.tp.twitub.ihm.view.components.JTwitCreation;
-import main.java.com.ubo.tp.twitub.ihm.view.components.JUser;
-import main.java.com.ubo.tp.twitub.observer.ITwitObserver;
+import com.ubo.tp.twitub.datamodel.Twit;
+import com.ubo.tp.twitub.ihm.controller.HomePageController;
+import com.ubo.tp.twitub.ihm.view.components.JTwitCreation;
+import com.ubo.tp.twitub.ihm.view.components.JUser;
+import com.ubo.tp.twitub.observer.ITwitObserver;
 
 import javax.swing.*;
 import java.awt.*;

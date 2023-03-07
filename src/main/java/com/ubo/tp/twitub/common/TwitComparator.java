@@ -1,6 +1,6 @@
-package main.java.com.ubo.tp.twitub.common;
+package com.ubo.tp.twitub.common;
 
-import main.java.com.ubo.tp.twitub.datamodel.Twit;
+import com.ubo.tp.twitub.datamodel.Twit;
 
 import java.util.Comparator;
 import java.util.Date;

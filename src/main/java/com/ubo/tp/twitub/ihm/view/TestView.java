@@ -1,8 +1,8 @@
-package main.java.com.ubo.tp.twitub.ihm.view;
+package com.ubo.tp.twitub.ihm.view;
 
-import main.java.com.ubo.tp.twitub.datamodel.Twit;
-import main.java.com.ubo.tp.twitub.datamodel.User;
-import main.java.com.ubo.tp.twitub.ihm.view.components.JListTwit;
+import com.ubo.tp.twitub.datamodel.Twit;
+import com.ubo.tp.twitub.datamodel.User;
+import com.ubo.tp.twitub.ihm.view.components.JListTwit;
 
 import javax.swing.*;
 import java.awt.*;

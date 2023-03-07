@@ -1,17 +1,17 @@
-package main.java.com.ubo.tp.twitub.core;
+package com.ubo.tp.twitub.core;
 
-import main.java.com.ubo.tp.twitub.datamodel.DataBaseObserverImpl;
-import main.java.com.ubo.tp.twitub.datamodel.Database;
-import main.java.com.ubo.tp.twitub.datamodel.IDatabase;
-import main.java.com.ubo.tp.twitub.events.file.IWatchableDirectory;
-import main.java.com.ubo.tp.twitub.events.file.WatchableDirectory;
-import main.java.com.ubo.tp.twitub.ihm.ChangePageController;
-import main.java.com.ubo.tp.twitub.ihm.TwitubMainView;
-import main.java.com.ubo.tp.twitub.ihm.TwitubMock;
-import main.java.com.ubo.tp.twitub.ihm.TwitubModel;
-import main.java.com.ubo.tp.twitub.ihm.controller.LoginController;
-import main.java.com.ubo.tp.twitub.ihm.view.LoginView;
-import main.java.com.ubo.tp.twitub.ihm.view.TestView;
+import com.ubo.tp.twitub.datamodel.DataBaseObserverImpl;
+import com.ubo.tp.twitub.datamodel.Database;
+import com.ubo.tp.twitub.datamodel.IDatabase;
+import com.ubo.tp.twitub.events.file.IWatchableDirectory;
+import com.ubo.tp.twitub.events.file.WatchableDirectory;
+import com.ubo.tp.twitub.ihm.ChangePageController;
+import com.ubo.tp.twitub.ihm.TwitubMainView;
+import com.ubo.tp.twitub.ihm.TwitubMock;
+import com.ubo.tp.twitub.ihm.TwitubModel;
+import com.ubo.tp.twitub.ihm.controller.LoginController;
+import com.ubo.tp.twitub.ihm.view.LoginView;
+import com.ubo.tp.twitub.ihm.view.TestView;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
