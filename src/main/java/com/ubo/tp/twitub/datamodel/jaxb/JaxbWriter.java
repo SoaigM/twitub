@@ -9,12 +9,18 @@ import javax.xml.bind.Marshaller;
 import java.io.File;
 import java.io.FileWriter;
 
+import static com.sun.activation.registries.LogSupport.log;
+
 /**
  * Classe de génération des fichiers XML.
  *
  * @author S.Lucas
  */
 public class JaxbWriter {
+
+    public JaxbWriter() {
+    }
+
     /**
      * Génération d'un fichier pour un twit ({@link TwitXml}).
      *
@@ -64,7 +70,7 @@ public class JaxbWriter {
                 isOk = FilesUtils.moveFile(tmpFile, destFileName);
             }
         } catch (Throwable t) {
-            System.err.println("Erreur lors de la génération du fichier pour l'objet : '" + objectToMarshal + "'");
+            log("Erreur lors de la génération du fichier pour l'objet : '" + objectToMarshal + "'");
             t.printStackTrace();
         }
 

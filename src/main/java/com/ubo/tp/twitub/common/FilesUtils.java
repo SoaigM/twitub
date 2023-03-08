@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+
+import static com.sun.activation.registries.LogSupport.log;
 
 /**
  * Classe utilitaire pour la gestion des fichiers.
@@ -12,10 +15,14 @@ import java.nio.channels.FileChannel;
  * @author S.Lucas
  */
 public class FilesUtils {
+
+    public FilesUtils() {
+    }
+
     /**
      * Déplacement du fichier source vers le fichier destination.
      *
-     * @param sourceFileName , Chemin du fichier source
+     * @param sourceFile , Chemin du fichier source
      * @param destFileName   , Chemin du fichier de destination
      * @return un booléen indiquant si le déplacement s'est déroulé avec succès.
      */
@@ -27,7 +34,11 @@ public class FilesUtils {
 
         // Si c'est bon, suppression de la source
         if (isOk) {
-            sourceFile.delete();
+            try {
+                Files.delete(sourceFile.toPath());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return isOk;
@@ -59,7 +70,7 @@ public class FilesUtils {
 
             isOk = true;
         } catch (Throwable t) {
-            System.err.println("Erreur lors de la copie du fichier '" + sourceFileName + "'");
+            log("Erreur lors de la copie du fichier '" + sourceFileName + "'");
             t.printStackTrace();
         } finally {
             // Fermeture des flux

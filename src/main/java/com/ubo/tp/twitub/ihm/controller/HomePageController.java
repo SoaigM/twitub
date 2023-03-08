@@ -121,13 +121,9 @@ public class HomePageController implements IDatabaseObserver, IHomePageModelObse
 
     @Override
     public void notifyUserModified(User modifiedUser) {
-        /*if(modifiedUser.equals(this.model.getSession())){
-            Set<String> newSet = modifiedUser.getFollows();
-            Set<String> oldSet = this.model.getSession().getFollows();
-            newSet.removeAll(oldSet);
-            newSet.forEach(twit -> );
-        }*/
+
     }
+
 
     @Override
     public void notifyAddNotify() {

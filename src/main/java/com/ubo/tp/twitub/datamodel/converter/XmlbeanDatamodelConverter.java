@@ -19,6 +19,7 @@ import java.util.UUID;
  */
 public class XmlbeanDatamodelConverter {
 
+    
     /**
      * Conversion du modèle de donnée vers le bean du fichier XML.
      *

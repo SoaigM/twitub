@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import static com.sun.activation.registries.LogSupport.log;
+
 /**
  * Classe utilitaire de gestion du chargement et de la sauvegarde des
  * configuration.
@@ -27,14 +29,14 @@ public class PropertiesManager {
                 in = new FileInputStream(configurationFilePath);
                 properties.load(in);
             } catch (Throwable t) {
-                System.out.println("Impossible de charger les configurations");
+                log("Impossible de charger les configurations");
                 t.printStackTrace();
             } finally {
                 if (in != null) {
                     try {
                         in.close();
                     } catch (IOException e) {
-                        System.err.println("Erreur lors de la fermeture du flux sur le fichier de configuration");
+                        log("Erreur lors de la fermeture du flux sur le fichier de configuration");
                     }
                 }
             }
@@ -56,14 +58,14 @@ public class PropertiesManager {
                 out = new FileOutputStream(configurationFilePath);
                 properties.store(out, "Configuration de l'application TwitUb");
             } catch (Throwable t) {
-                System.err.println("Impossible d'enregistrer les configurations");
+                log("Impossible d'enregistrer les configurations");
                 t.printStackTrace();
             } finally {
                 if (out != null) {
                     try {
                         out.close();
                     } catch (Throwable e) {
-                        System.err.println("Erreur lors de la fermeture du flux sur le fichier de configuration");
+                        log("Erreur lors de la fermeture du flux sur le fichier de configuration");
                     }
                 }
             }

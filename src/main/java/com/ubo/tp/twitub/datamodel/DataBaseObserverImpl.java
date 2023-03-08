@@ -1,34 +1,40 @@
 package com.ubo.tp.twitub.datamodel;
 
+import static com.sun.activation.registries.LogSupport.log;
+
 public class DataBaseObserverImpl implements IDatabaseObserver {
+
+    private static final String ARROW = " -> \"";
+    private static final String FROM = "\" from @";
+
     @Override
     public void notifyTwitAdded(Twit addedTwit) {
-        System.out.println("twit added: " + addedTwit.getUuid() + " -> \"" + addedTwit.getText() + "\" from @" + addedTwit.getTwiter().getUserTag());
+        log("twit added: " + addedTwit.getUuid() + ARROW + addedTwit.getText() + FROM + addedTwit.getTwiter().getUserTag());
     }
 
     @Override
     public void notifyTwitDeleted(Twit deletedTwit) {
-        System.out.println("twit deleted: " + deletedTwit.getUuid() + " -> \"" + deletedTwit.getText() + "\" from @" + deletedTwit.getTwiter().getUserTag());
+        log("twit deleted: " + deletedTwit.getUuid() + ARROW + deletedTwit.getText() + FROM + deletedTwit.getTwiter().getUserTag());
     }
 
     @Override
     public void notifyTwitModified(Twit modifiedTwit) {
-        System.out.println("twit modified: " + modifiedTwit.getUuid() + " -> \"" + modifiedTwit.getText() + "\" from @" + modifiedTwit.getTwiter().getUserTag());
+        log("twit modified: " + modifiedTwit.getUuid() + ARROW + modifiedTwit.getText() + FROM + modifiedTwit.getTwiter().getUserTag());
     }
 
     @Override
     public void notifyUserAdded(User addedUser) {
-        System.out.println("user added: @" + addedUser.getUserTag() + " / " + addedUser.getName());
+        log("user added: @" + addedUser.getUserTag() + " / " + addedUser.getName());
 
     }
 
     @Override
     public void notifyUserDeleted(User deletedUser) {
-        System.out.println("user deleted: @" + deletedUser.getUserTag() + " / " + deletedUser.getName());
+        log("user deleted: @" + deletedUser.getUserTag() + " / " + deletedUser.getName());
     }
 
     @Override
     public void notifyUserModified(User modifiedUser) {
-        System.out.println("user modified: @" + modifiedUser.getUserTag() + " / " + modifiedUser.getName() + " follows: " + modifiedUser.getFollows());
+        log("user modified: @" + modifiedUser.getUserTag() + " / " + modifiedUser.getName() + " follows: " + modifiedUser.getFollows());
     }
 }

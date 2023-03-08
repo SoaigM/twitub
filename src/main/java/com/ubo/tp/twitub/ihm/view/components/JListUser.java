@@ -15,13 +15,8 @@ public class JListUser extends JPanel {
     private final Set<User> users;
     private final User session;
     MouseListener clickUser = new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            super.mouseClicked(e);
-        }
     };
     private JScrollPane userScroll;
-    private JPanel usersPanel;
     private User clickedUser = null;
 
 
@@ -36,7 +31,7 @@ public class JListUser extends JPanel {
     }
 
     public void initComponent() {
-        usersPanel = new JPanel();
+        JPanel usersPanel = new JPanel();
         usersPanel.setBackground(Color.LIGHT_GRAY);
         usersPanel.setLayout(new GridBagLayout());
 

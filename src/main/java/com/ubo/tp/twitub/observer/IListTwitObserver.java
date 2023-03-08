@@ -1,7 +1,7 @@
 package com.ubo.tp.twitub.observer;
 
 public interface IListTwitObserver {
-    void notifyListTwitBack();
+    default void notifyListTwitBack(){}
 
-    void notifySearch(String text);
+    default void notifySearch(String text){}
 }

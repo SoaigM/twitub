@@ -7,7 +7,7 @@ public class JTwitCreation extends JPanel {
 
 
     private final JLabel sizeLabel;
-    private final String sizeText = "taile du text: ";
+    private final static String SIZE_TEXT = "taile du text: ";
     private final JLabel twitLabel;
     private final JTextArea twit;
     private final JScrollPane twitScrollPane;
@@ -20,13 +20,13 @@ public class JTwitCreation extends JPanel {
         this.setLayout(new GridBagLayout());
         twitLabel = new JLabel("twit:");
         twit = new JTextArea(10, 15);
-        sizeLabel = new JLabel(sizeText + "0");
+        sizeLabel = new JLabel(SIZE_TEXT + "0");
         twitScrollPane = new JScrollPane(twit);
 
 
         twit.addCaretListener(e -> {
             sizeValue = String.valueOf(twit.getText().length());
-            sizeLabel.setText(sizeText + sizeValue);
+            sizeLabel.setText(SIZE_TEXT + sizeValue);
         });
 
 
@@ -46,6 +46,6 @@ public class JTwitCreation extends JPanel {
 
 
     public void setText(String text) {
-        twit.setText("");
+        twit.setText(text);
     }
 }

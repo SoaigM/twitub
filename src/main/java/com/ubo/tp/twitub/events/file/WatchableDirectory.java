@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import static com.sun.activation.registries.LogSupport.log;
+
 /**
  * Classe responsable de la surveillance d'un répertoire (avec notification des
  * {@link IWatchableDirectoryObserver} lors des modifications)
@@ -93,7 +95,7 @@ public class WatchableDirectory implements IWatchableDirectory {
             this.startPolling();
         } else {
             mDirectory = null;
-            System.err.println("Erreur lors du démarrage de la surveillance du répertoire : " + mDirectoryPath);
+            log("Erreur lors du démarrage de la surveillance du répertoire : " + mDirectoryPath);
         }
     }
 
@@ -132,21 +134,18 @@ public class WatchableDirectory implements IWatchableDirectory {
      * Démarrage de la surveillance du répertoire
      */
     protected void startPolling() {
-        mWatchingThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    // Attente avant la prochaine vérification
-                    Thread.sleep(POLLING_TIME);
+        mWatchingThread = new Thread(() -> {
+            try {
+                // Attente avant la prochaine vérification
+                Thread.sleep(POLLING_TIME);
 
-                    // Vérification des changements
-                    watchDirectory();
+                // Vérification des changements
+                watchDirectory();
 
-                    // Relancement automatique
-                    startPolling();
-                } catch (InterruptedException e) {
-                    System.err.println("Surveillance du répertoire interrompue.");
-                }
+                // Relancement automatique
+                startPolling();
+            } catch (InterruptedException e) {
+                System.err.println("Surveillance du répertoire interrompue.");
             }
         });
 
@@ -194,12 +193,11 @@ public class WatchableDirectory implements IWatchableDirectory {
                     // précédente
                     Long savedLastModification = mFileModificationMap.get(presentFile.getName());
 
-                    if (savedLastModification != null) {
+                    if (savedLastModification != null && savedLastModification < presentFile.lastModified()) {
                         // Si le fichier a été modifié depuis
-                        if (savedLastModification < presentFile.lastModified()) {
                             // Stockage du fichier comme ayant été modifié
                             modifiedFiles.add(presentFile);
-                        }
+
                     }
                 }
             }

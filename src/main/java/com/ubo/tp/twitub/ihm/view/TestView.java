@@ -28,11 +28,6 @@ public class TestView implements ITwitubView {
         Twit twit = new Twit(test, "hello ");
         Twit twit1 = new Twit(test, " wordl");
         Twit twit2 = new Twit(test, "hello wordl");
-        Twit twit3 = new Twit(test, "damng");
-        Twit twit4 = new Twit(test, "a");
-        Twit twit5 = new Twit(test, "osjdfmlqsdjf");
-        Twit twit6 = new Twit(test, "aqsd");
-        Twit twit7 = new Twit(test, "bq");
         Set<Twit> listTwit = new HashSet<>();
         listTwit.add(twit);
         listTwit.add(twit1);

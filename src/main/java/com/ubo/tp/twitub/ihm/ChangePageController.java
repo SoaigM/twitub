@@ -25,6 +25,8 @@ import com.ubo.tp.twitub.observer.ITwitObserver;
 
 import java.util.Set;
 
+import static com.sun.activation.registries.LogSupport.log;
+
 public class ChangePageController implements ILoginObserver, ISubscribeObserver, ITwitObserver, IListTwitObserver, IListUserObserver {
 
     private final TwitubModel mainModel;
@@ -39,13 +41,12 @@ public class ChangePageController implements ILoginObserver, ISubscribeObserver,
 
     @Override
     public void notifyLoggedUser(User user) {
-        System.out.println(user + " loged");
         mainModel.setUser(user);
         mainModel.setNbFollowedTwits(getNbFollowedTwits());
-        homePage(user);
+        homePage();
     }
 
-    private void homePage(User user){
+    private void homePage(){
         HomePageModel model = new HomePageModel(mainModel.getUser(), mainModel.getDatabase(), this.mainModel.getNbFollowedTwits());
         HomePageController homePageController = new HomePageController(model, entityManager,this.mainModel.getNbFollowedTwits());
         HomePageView homePageView = new HomePageView(homePageController);
@@ -93,12 +94,12 @@ public class ChangePageController implements ILoginObserver, ISubscribeObserver,
 
     @Override
     public void notifyErrorLogin(String error) {
-
+        ILoginObserver.super.notifyErrorLogin(error);
     }
 
     @Override
     public void notifySubscribed(User subscribedUser) {
-        System.out.println("user created: " + subscribedUser);
+        log("user created: " + subscribedUser);
         mainModel.setUser(subscribedUser);
         LoginController loginController = new LoginController(mainModel);
         loginController.addObserver(this);
@@ -110,7 +111,7 @@ public class ChangePageController implements ILoginObserver, ISubscribeObserver,
 
     @Override
     public void notifyErrorSubscription(String error) {
-
+        ISubscribeObserver.super.notifyErrorSubscription(error);
     }
 
     @Override
@@ -118,14 +119,15 @@ public class ChangePageController implements ILoginObserver, ISubscribeObserver,
         notifyBackToConnectionPage();
     }
 
+
     @Override
     public void notifyNewTwit(Twit twit) {
-
+        ITwitObserver.super.notifyNewTwit(twit);
     }
 
     @Override
     public void notifyErrorTwit(String error) {
-
+        ITwitObserver.super.notifyErrorTwit(error);
     }
 
     @Override
@@ -159,28 +161,28 @@ public class ChangePageController implements ILoginObserver, ISubscribeObserver,
 
     @Override
     public void notifyNotification(int i) {
-
+        ITwitObserver.super.notifyNotification(i);
     }
 
     @Override
     public void notifyListTwitBack() {
         mainModel.setNbFollowedTwits(getNbFollowedTwits());
-        homePage(this.mainModel.getUser());
-    }
-
-    @Override
-    public void notifyListUserBack() {
-        homePage(this.mainModel.getUser());
-
+        homePage();
     }
 
     @Override
     public void notifySearch(String text) {
-
+        IListTwitObserver.super.notifySearch(text);
     }
 
     @Override
     public void notifyFollow(User userClicked) {
+        IListUserObserver.super.notifyFollow(userClicked);
+    }
+
+    @Override
+    public void notifyListUserBack() {
+        homePage();
 
     }
 }

@@ -5,14 +5,15 @@ import com.ubo.tp.twitub.datamodel.User;
 public interface ILoginObserver {
 
 
-    void notifyLoggedUser(User user);
+    default void notifyLoggedUser(User user){}
 
-    void notifyBackToConnectionPage();
-
-
-    void notifyAskSubscription();
+    default void notifyBackToConnectionPage(){}
 
 
-    void notifyErrorLogin(String error);
+    default void notifyAskSubscription(){}
+
+
+    default void notifyErrorLogin(String error){
+    }
 
 }

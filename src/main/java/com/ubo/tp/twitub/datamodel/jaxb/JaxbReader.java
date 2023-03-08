@@ -8,12 +8,17 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.FileReader;
 
+import static com.sun.activation.registries.LogSupport.log;
+
 /**
  * Classe de lecture des fichiers XML.
  *
  * @author S.Lucas
  */
 public class JaxbReader {
+
+    public JaxbReader() {
+    }
 
     protected static final String JAXB_BEAN_ROOT_PACKAGE = "com.ubo.tp.twitub.datamodel.jaxb.bean";
 
@@ -65,7 +70,7 @@ public class JaxbReader {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             object = unmarshaller.unmarshal(new FileReader(xmlFileName));
         } catch (Throwable t) {
-            System.err.println("Erreur de chargement du fichier : '" + xmlFileName + "'");
+           log("Erreur de chargement du fichier : '" + xmlFileName + "'");
             t.printStackTrace();
         }
         return object;

@@ -59,21 +59,6 @@ public class LoginView implements ITwitubView, ILoginObserver {
     }
 
     @Override
-    public void notifyLoggedUser(User user) {
-
-    }
-
-    @Override
-    public void notifyBackToConnectionPage() {
-
-    }
-
-    @Override
-    public void notifyAskSubscription() {
-
-    }
-
-    @Override
     public void notifyErrorLogin(String error) {
         errorLabel.setText(error);
     }

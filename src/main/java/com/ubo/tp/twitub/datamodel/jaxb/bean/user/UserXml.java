@@ -172,7 +172,7 @@ public class UserXml {
      */
     public List<String> getFollows() {
         if (follows == null) {
-            follows = new ArrayList<String>();
+            follows = new ArrayList<>();
         }
         return this.follows;
     }

@@ -23,10 +23,10 @@ public class LoginController {
 
     public void doLogin(String login, String password) {
         Set<User> users = getUsers();
-        for (User user : users) {
-            if (user.getName().equals(login) && user.getUserPassword().equals(password)) {
-                this.user = user;
-                mObservers.forEach(e -> e.notifyLoggedUser(user));
+        for (User userLog : users) {
+            if (userLog.getName().equals(login) && userLog.getUserPassword().equals(password)) {
+                this.user = userLog;
+                mObservers.forEach(e -> e.notifyLoggedUser(userLog));
             }
         }
         mObservers.forEach(e -> e.notifyErrorLogin("login ou mot de passe incorrect"));

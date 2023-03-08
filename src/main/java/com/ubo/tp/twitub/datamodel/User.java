@@ -171,11 +171,10 @@ public class User {
     public boolean equals(Object other) {
         boolean equals = false;
 
-        if (other != null) {
-            if (other instanceof User) {
-                User otherUser = (User) other;
-                equals = (this.getUuid().equals(otherUser.getUuid()));
-            }
+        if (other != null && other instanceof User) {
+            User otherUser = (User) other;
+            equals = (this.getUuid().equals(otherUser.getUuid()));
+
         }
 
         return equals;
@@ -187,7 +186,7 @@ public class User {
     @Override
     public String toString() {
 
-        String sb = "[" +
+        return  "[" +
                 this.getClass().getName() +
                 "] : " +
                 this.getUuid() +
@@ -197,6 +196,5 @@ public class User {
                 this.getName() +
                 "}";
 
-        return sb;
     }
 }

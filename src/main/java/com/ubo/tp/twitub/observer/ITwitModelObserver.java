@@ -5,5 +5,5 @@ import com.ubo.tp.twitub.datamodel.Twit;
 import java.util.Set;
 
 public interface ITwitModelObserver {
-    void notifyTwitsChanged(Set<Twit> twits);
+    default void notifyTwitsChanged(Set<Twit> twits){}
 }

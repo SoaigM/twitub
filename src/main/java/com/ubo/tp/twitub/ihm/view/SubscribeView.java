@@ -71,17 +71,10 @@ public class SubscribeView implements ITwitubView, ISubscribeObserver {
         return panel;
     }
 
-    @Override
-    public void notifySubscribed(User subscribedUser) {
-    }
 
     @Override
     public void notifyErrorSubscription(String error) {
         errorLabel.setText(error);
     }
 
-    @Override
-    public void notifySubscribeBack() {
-
-    }
 }

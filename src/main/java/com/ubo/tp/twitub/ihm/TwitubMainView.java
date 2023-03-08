@@ -26,17 +26,14 @@ public class TwitubMainView {
         }
 
         // Affichage dans l'EDT
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // Custom de l'affichage
-                JFrame frame = TwitubMainView.this.mFrame;
-                frame.setLocation((screenSize.width - frame.getWidth()) / 2,
-                        (screenSize.height - frame.getHeight()) / 3);
+        SwingUtilities.invokeLater(() -> {
+            // Custom de l'affichage
+            JFrame frame = TwitubMainView.this.mFrame;
+            frame.setLocation((screenSize.width - frame.getWidth()) / 2,
+                    (screenSize.height - frame.getHeight()) / 3);
 
-                // Affichage
-                TwitubMainView.this.mFrame.setVisible(true);
-            }
+            // Affichage
+            TwitubMainView.this.mFrame.setVisible(true);
         });
     }
 
@@ -74,12 +71,7 @@ public class TwitubMainView {
         // Ajout de la fenêtre "?" a la barre de menu
         JMenu mMenuHelp = new JMenu("?");
         JMenuItem mMenuAbout = new JMenuItem("A propos");
-        mMenuAbout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(mFrame, "UBO M1 TIIL\nDépartmement Informatique", "A propos", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/main/resources/images/logo_50.jpg"));
-            }
-        });
+        mMenuAbout.addActionListener(e -> JOptionPane.showMessageDialog(mFrame, "UBO M1 TIIL\nDépartmement Informatique", "A propos", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/main/resources/images/logo_50.jpg")));
         mMenuHelp.add(mMenuAbout);
 
         mMenuBar.add(mMenuFichier);

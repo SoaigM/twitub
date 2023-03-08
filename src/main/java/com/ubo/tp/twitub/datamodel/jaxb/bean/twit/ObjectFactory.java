@@ -47,7 +47,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.example.org/twit/", name = "Twit")
     public JAXBElement<TwitXml> createTwit(TwitXml value) {
-        return new JAXBElement<TwitXml>(_Twit_QNAME, TwitXml.class, null, value);
+        return new JAXBElement<>(_Twit_QNAME, TwitXml.class, null, value);
     }
 
 }

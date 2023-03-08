@@ -5,13 +5,13 @@ import com.ubo.tp.twitub.datamodel.Twit;
 public interface ITwitObserver {
 
 
-    void notifyNewTwit(Twit twit);
+    default void notifyNewTwit(Twit twit){}
 
-    void notifyErrorTwit(String error);
+    default void notifyErrorTwit(String error){}
 
-    void notifyAskTwitsList();
+    default void notifyAskTwitsList(){}
 
-    void notifyAskUsersList();
+    default void notifyAskUsersList(){}
 
-    void notifyNotification(int i);
+    default void notifyNotification(int i){}
 }

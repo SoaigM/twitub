@@ -12,7 +12,6 @@ public class JUser extends JPanel {
     private final JLabel name;
     private final JLabel tag;
     private final ImageIcon avatar;
-    private String sizeValue;
 
     public JUser(User user) {
         super();

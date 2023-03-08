@@ -42,6 +42,7 @@ public class ListUsersModel implements IDatabaseObserver {
         this.mObservers.add(observer);
     }
 
+
     @Override
     public void notifyTwitAdded(Twit addedTwit) {
 

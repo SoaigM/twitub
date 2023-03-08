@@ -47,7 +47,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.example.org/twit/", name = "User")
     public JAXBElement<UserXml> createUser(UserXml value) {
-        return new JAXBElement<UserXml>(_User_QNAME, UserXml.class, null, value);
+        return new JAXBElement<>(_User_QNAME, UserXml.class, null, value);
     }
 
 }

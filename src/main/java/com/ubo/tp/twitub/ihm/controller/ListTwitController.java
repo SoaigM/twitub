@@ -102,18 +102,4 @@ public class ListTwitController implements IDatabaseObserver, IListTwitObserver 
     public void notifyUserModified(User modifiedUser) {
 
     }
-
-    @Override
-    public void notifyListTwitBack() {
-
-    }
-
-    /*public void addObserver(ILoginObserver observer) {
-        this.mObservers.add(observer);
-
-        // Notification pour le nouvel observateur
-        if (user != null) {
-            observer.notifyLoggedUser(user);
-        }
-    }*/
 }

@@ -79,15 +79,6 @@ public class HomePageView implements ITwitubView, ITwitObserver {
         errorLabel.setText(error);
     }
 
-    @Override
-    public void notifyAskTwitsList() {
-
-    }
-
-    @Override
-    public void notifyAskUsersList() {
-
-    }
 
     @Override
     public void notifyNotification(int i) {

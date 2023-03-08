@@ -51,20 +51,17 @@ public class TwitubMock {
         }
 
         // Affichage dans l'EDT
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // Custom de l'affichage
-                JFrame frame = TwitubMock.this.mFrame;
-                Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-                frame.setLocation((screenSize.width - frame.getWidth()) / 6,
-                        (screenSize.height - frame.getHeight()) / 4);
+        SwingUtilities.invokeLater(() -> {
+            // Custom de l'affichage
+            JFrame frame = TwitubMock.this.mFrame;
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            frame.setLocation((screenSize.width - frame.getWidth()) / 6,
+                    (screenSize.height - frame.getHeight()) / 4);
 
-                // Affichage
-                TwitubMock.this.mFrame.setVisible(true);
+            // Affichage
+            TwitubMock.this.mFrame.setVisible(true);
 
-                TwitubMock.this.mFrame.pack();
-            }
+            TwitubMock.this.mFrame.pack();
         });
     }
 
@@ -83,23 +80,11 @@ public class TwitubMock {
 
         Button addUserButton = new Button("Add User");
         addUserButton.setPreferredSize(new Dimension(100, 50));
-        addUserButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                TwitubMock.this.addUserInDatabase();
-            }
-        });
+        addUserButton.addActionListener(arg0 -> TwitubMock.this.addUserInDatabase());
 
         Button addTwitButton = new Button("Add Twit");
         addTwitButton.setPreferredSize(new Dimension(100, 50));
-        addTwitButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                TwitubMock.this.addTwitInDatabase();
-            }
-        });
+        addTwitButton.addActionListener(arg0 -> TwitubMock.this.addTwitInDatabase());
 
         //
         // Gestion des fichiers
@@ -108,23 +93,11 @@ public class TwitubMock {
 
         Button sendUserButton = new Button("Send User");
         sendUserButton.setPreferredSize(new Dimension(100, 50));
-        sendUserButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                TwitubMock.this.sendUser();
-            }
-        });
+        sendUserButton.addActionListener(arg0 -> TwitubMock.this.sendUser());
 
         Button sendTwitButton = new Button("Send Twit");
         sendTwitButton.setPreferredSize(new Dimension(100, 50));
-        sendTwitButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                TwitubMock.this.sendTwit();
-            }
-        });
+        sendTwitButton.addActionListener(arg0 -> TwitubMock.this.sendTwit());
 
         //
         // Ajout des composants à la fenêtre
@@ -171,9 +144,8 @@ public class TwitubMock {
     protected User generateUser() {
         int randomInt = new Random().nextInt(99999);
         String userName = "MockUser" + randomInt;
-        User newUser = new User(UUID.randomUUID(), userName, "--", userName, new HashSet<>(), "");
+        return new User(UUID.randomUUID(), userName, "--", userName, new HashSet<>(), "");
 
-        return newUser;
     }
 
     /**
@@ -213,8 +185,7 @@ public class TwitubMock {
         User randomUser = new ArrayList<User>(this.mDatabase.getUsers()).get(Math.max(0, userIndex - 1));
 
         // Création d'un twit fictif
-        Twit newTwit = new Twit(randomUser, "Twit fictif!! #Mock #test ;)");
+        return  new Twit(randomUser, "Twit fictif!! #Mock #test ;)");
 
-        return newTwit;
     }
 }

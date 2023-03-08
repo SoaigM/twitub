@@ -61,6 +61,7 @@ public class HomePageModel implements ITwitNotificationObserver, IDatabaseObserv
         this.notification=notification;
     }
 
+
     @Override
     public void notifyTwitAdded(Twit addedTwit) {
 

@@ -207,12 +207,11 @@ public class Twit {
     public boolean equals(Object other) {
         boolean equals = false;
 
-        if (other != null) {
-            if (other instanceof Twit) {
-                Twit otherTwit = (Twit) other;
-                equals = (this.getUuid().equals(otherTwit.getUuid()));
-            }
+        if (other != null && other instanceof Twit) {
+            Twit otherTwit = (Twit) other;
+            equals = (this.getUuid().equals(otherTwit.getUuid()));
         }
+
 
         return equals;
     }
@@ -223,7 +222,7 @@ public class Twit {
     @Override
     public String toString() {
 
-        String sb = "[" +
+        return "[" +
                 this.getClass().getName() +
                 "] : " +
                 this.getUuid() +
@@ -231,6 +230,5 @@ public class Twit {
                 this.getText() +
                 "}";
 
-        return sb;
     }
 }

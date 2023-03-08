@@ -4,10 +4,12 @@ import com.ubo.tp.twitub.datamodel.User;
 
 public interface ISubscribeObserver {
 
-    void notifySubscribed(User subscribedUser);
+    default void notifySubscribed(User subscribedUser){}
 
 
-    void notifyErrorSubscription(String error);
+    default void notifyErrorSubscription(String error) {
 
-    void notifySubscribeBack();
+    }
+
+    default void notifySubscribeBack(){}
 }

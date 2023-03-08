@@ -25,7 +25,7 @@ public class SubscribeController {
     }
 
     public void createNewUser(String name, String tag, String password, String confirmation) {
-        if (password.equals("") || password == null || tag.equals("") || tag == null || name.equals("") || name == null || confirmation.equals("") || confirmation == null) {
+        if (tag.equals("") ||  name.equals("")  ) {
             mObservers.forEach(e -> e.notifyErrorSubscription("Tous les champs doivents être rempli"));
             return;
         }

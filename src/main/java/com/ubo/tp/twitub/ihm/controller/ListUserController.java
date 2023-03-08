@@ -33,10 +33,6 @@ public class ListUserController implements IDatabaseObserver, IListUserObserver 
     }
 
 
-    @Override
-    public void notifyListUserBack() {
-
-    }
 
     @Override
     public void notifySearch(String text) {
@@ -60,6 +56,7 @@ public class ListUserController implements IDatabaseObserver, IListUserObserver 
         }
         entityManager.sendUser(model.getSession());
     }
+
 
     @Override
     public void notifyTwitAdded(Twit addedTwit) {
@@ -93,12 +90,5 @@ public class ListUserController implements IDatabaseObserver, IListUserObserver 
     }
 
 
-    /*public void addObserver(ILoginObserver observer) {
-        this.mObservers.add(observer);
 
-        // Notification pour le nouvel observateur
-        if (user != null) {
-            observer.notifyLoggedUser(user);
-        }
-    }*/
 }

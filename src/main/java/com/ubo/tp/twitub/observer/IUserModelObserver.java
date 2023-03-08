@@ -5,7 +5,7 @@ import com.ubo.tp.twitub.datamodel.User;
 import java.util.Set;
 
 public interface IUserModelObserver {
-    void notifyUsersChanged(Set<User> user);
+    default void notifyUsersChanged(Set<User> user){}
 
-    void notifySessionChanged();
+    default void notifySessionChanged(){}
 }
