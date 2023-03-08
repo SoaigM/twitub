@@ -1,4 +1,4 @@
-package main.java.com.ubo.tp.twitub.ihm.view.components;
+package com.ubo.tp.twitub.ihm.view.components;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,10 +1,10 @@
-package main.java.com.ubo.tp.twitub.ihm.view;
+package com.ubo.tp.twitub.ihm.view;
 
-import main.java.com.ubo.tp.twitub.datamodel.User;
-import main.java.com.ubo.tp.twitub.ihm.model.ListUsersModel;
-import main.java.com.ubo.tp.twitub.ihm.view.components.JListUser;
-import main.java.com.ubo.tp.twitub.observer.IListUserObserver;
-import main.java.com.ubo.tp.twitub.observer.IUserModelObserver;
+import com.ubo.tp.twitub.datamodel.User;
+import com.ubo.tp.twitub.ihm.model.ListUsersModel;
+import com.ubo.tp.twitub.ihm.view.components.JListUser;
+import com.ubo.tp.twitub.observer.IListUserObserver;
+import com.ubo.tp.twitub.observer.IUserModelObserver;
 
 import javax.swing.*;
 import java.awt.*;

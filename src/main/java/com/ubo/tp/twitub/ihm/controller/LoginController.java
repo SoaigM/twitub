@@ -1,9 +1,9 @@
-package main.java.com.ubo.tp.twitub.ihm.controller;
+package com.ubo.tp.twitub.ihm.controller;
 
-import main.java.com.ubo.tp.twitub.datamodel.IDatabase;
-import main.java.com.ubo.tp.twitub.datamodel.User;
-import main.java.com.ubo.tp.twitub.ihm.TwitubModel;
-import main.java.com.ubo.tp.twitub.observer.ILoginObserver;
+import com.ubo.tp.twitub.datamodel.IDatabase;
+import com.ubo.tp.twitub.datamodel.User;
+import com.ubo.tp.twitub.ihm.TwitubModel;
+import com.ubo.tp.twitub.observer.ILoginObserver;
 
 import java.util.HashSet;
 import java.util.Set;
