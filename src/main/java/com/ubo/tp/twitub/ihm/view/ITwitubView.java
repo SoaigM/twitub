@@ -1,4 +1,4 @@
-package main.java.com.ubo.tp.twitub.ihm.view;
+package com.ubo.tp.twitub.ihm.view;
 
 import java.awt.*;
 

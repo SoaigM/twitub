@@ -1,8 +1,8 @@
-package main.java.com.ubo.tp.twitub.ihm.view;
+package com.ubo.tp.twitub.ihm.view;
 
-import main.java.com.ubo.tp.twitub.datamodel.User;
-import main.java.com.ubo.tp.twitub.ihm.controller.SubscribeController;
-import main.java.com.ubo.tp.twitub.observer.ISubscribeObserver;
+import com.ubo.tp.twitub.datamodel.User;
+import com.ubo.tp.twitub.ihm.controller.SubscribeController;
+import com.ubo.tp.twitub.observer.ISubscribeObserver;
 
 import javax.swing.*;
 import java.awt.*;

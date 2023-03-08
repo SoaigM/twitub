@@ -1,14 +1,14 @@
-package main.java.com.ubo.tp.twitub.ihm.controller;
+package com.ubo.tp.twitub.ihm.controller;
 
-import main.java.com.ubo.tp.twitub.core.EntityManager;
-import main.java.com.ubo.tp.twitub.datamodel.IDatabaseObserver;
-import main.java.com.ubo.tp.twitub.datamodel.Twit;
-import main.java.com.ubo.tp.twitub.datamodel.User;
-import main.java.com.ubo.tp.twitub.ihm.model.HomePageModel;
-import main.java.com.ubo.tp.twitub.observer.IHomePageModelObserver;
-import main.java.com.ubo.tp.twitub.observer.ILoginObserver;
-import main.java.com.ubo.tp.twitub.observer.ITwitNotificationObserver;
-import main.java.com.ubo.tp.twitub.observer.ITwitObserver;
+import com.ubo.tp.twitub.core.EntityManager;
+import com.ubo.tp.twitub.datamodel.IDatabaseObserver;
+import com.ubo.tp.twitub.datamodel.Twit;
+import com.ubo.tp.twitub.datamodel.User;
+import com.ubo.tp.twitub.ihm.model.HomePageModel;
+import com.ubo.tp.twitub.observer.IHomePageModelObserver;
+import com.ubo.tp.twitub.observer.ILoginObserver;
+import com.ubo.tp.twitub.observer.ITwitNotificationObserver;
+import com.ubo.tp.twitub.observer.ITwitObserver;
 
 import java.util.HashSet;
 import java.util.Set;
